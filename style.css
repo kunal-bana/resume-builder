@@ -34,6 +34,7 @@ footer {
   text-align: center;
   display: flex;
   border-top: 1px solid black;
+  justify-content: center;
 }
 
 .container {
