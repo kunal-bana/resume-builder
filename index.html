@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link rel="icon" type="image/" href="cv.png"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <img id="header-img" src="resume.png">
+  <h1 class="heading">Resume Builder</h1>
+</header>
+
+<main class="container">
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <form id="resumeForm">
+
+      <article>
+        <label>Profile Picture</label>
+        <input type="file" id="profilePic" accept="image/*" />
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="tel" id="phone" placeholder="Your Phone Number" required />
+      </article>
+
+      <article>
+        <h2>Summary</h2>
+        <textarea id="summary" placeholder="Enter a short summary"></textarea>
+      </article>
+
+      <article>
+        <h2>Skills</h2>
+        <div class="skill-input">
+          <input type="text" id="skillInput" placeholder="Add a skill" />
+          <button type="button" id="addSkill">Add</button>
+        </div>
+      </article>
+
+      <article>
+        <h2>Experience / Projects</h2>
+        <div id="experienceFields"></div>
+        <button type="button" id="addExperience">Add Experience</button>
+      </article>
+
+      <article>
+        <h2>Education</h2>
+        <input type="text" id="educationName" placeholder="Degree/School name" />
+        <input type="text" id="educationYear" placeholder="Year Passed Out" />
+        <button type="button" id="addEducation">Add Education</button>
+      </article>
+
+    </form>
+  </section>
+
+  <!-- PREVIEW SECTION -->
+  <section class="preview-section">
+    <article class="resume">
+
+      <div class="actions">
+        <button id="printBtn" title="Print Resume">
+          <i class="fa-solid fa-print"></i>
+        </button>
+        <button id="exportBtn" title="Export as PDF">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
+      </div>
+
+      <div class="resume-header">
+        <img id="previewImage" src="456212.png" alt="Profile Photo" />
+        <div>
+          <h1 id="previewName">Your Name</h1>
+          <p id="previewContact"></p>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3 class="section-title">Summary</h3>
+        <p id="previewSummary"></p>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="resume-section">
+        <h3 class="section-title">Skills</h3>
+        <ul id="previewSkills"></ul>
+      </div>
+
+      <div class="resume-section">
+        <h3 class="section-title">Experience / Projects</h3>
+        <div class="table-wrapper">
+          <table class="experience-table">
+            <thead>
+              <tr>
+                <th>Role / Project</th>
+                <th>Description</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody id="previewExperience"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h3 class="section-title">Education</h3>
+        <div id="previewEducationList"></div>
+      </div>
+
+    </article>
+  </section>
+
+</main>
+
+<!-- PRINT PREVIEW MODAL -->
+<div id="printModal" class="modal">
+  <div class="modal-content">
+
+    <div class="modal-actions">
+      <button id="cancelPrint">Cancel</button>
+    </div>
+
+    <div id="modalPreview"></div>
+  </div>
+</div>
+
+<footer>
+  <p>©2026 Resume Builder</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

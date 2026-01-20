@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  user-select: none;
+  background-color: #f5f7f5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+#header-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+footer {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  border-top: 1px solid black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+.form-section,
+.preview-section {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+article {
+  margin-bottom: 25px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+button:hover {
+  background: grey;
+  color: black;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.resume-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resume-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.resume-section {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.section-title {
+  color: black;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.education-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.education-row span:first-child {
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .modal,
+  .modal * {
+    visibility: visible;
+  }
+
+  .modal-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    flex-direction: column;
+  }
+  header{
+    display:flex
+  }
+}
